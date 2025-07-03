@@ -18,6 +18,9 @@ SLACK_WEBHOOK_NEWLEAD=https://hooks.slack.com/services/YOUR/WEBHOOK/URL5
 # Webhook for New Appointments (daily-appointments channel)
 SLACK_WEBHOOK_NEWAPPOINTMENT=https://hooks.slack.com/services/YOUR/WEBHOOK/URL2
 
+# Webhook for New Appointments No Confirmation (sales-coordinator channel)
+SLACK_WEBHOOK_NEWAPPOINTMENT_NOCONFIRMATION=https://hooks.slack.com/services/YOUR/WEBHOOK/URL6
+
 # Webhook for Ebook Downloads (marketing-leads channel)
 SLACK_WEBHOOK_EBOOKLEAD=https://hooks.slack.com/services/YOUR/WEBHOOK/URL3
 
