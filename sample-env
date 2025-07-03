@@ -4,8 +4,8 @@
 # Environment (development/production)
 ENVIRONMENT=development
 
-# Timezone
-TIMEZONE=UTC
+# Timezone (Arizona Time - UTC-7, no daylight saving)
+TIMEZONE=America/Phoenix
 
 # Slack Configuration
 # Option 1: Event-Specific Webhook URLs (one webhook per channel)
@@ -15,7 +15,7 @@ TIMEZONE=UTC
 # Webhook for New Leads (lead-flow channel - same as recruiting secrets)
 SLACK_WEBHOOK_NEWLEAD=https://hooks.slack.com/services/YOUR/WEBHOOK/URL5
 
-# Webhook for New Appointments (appointments channel)
+# Webhook for New Appointments (daily-appointments channel)
 SLACK_WEBHOOK_NEWAPPOINTMENT=https://hooks.slack.com/services/YOUR/WEBHOOK/URL2
 
 # Webhook for Ebook Downloads (marketing-leads channel)
