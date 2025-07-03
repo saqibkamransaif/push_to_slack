@@ -1,0 +1,16 @@
+RewriteEngine On
+
+# Redirect all requests to public directory
+RewriteCond %{REQUEST_URI} !^/public/
+RewriteRule ^(.*)$ /public/$1 [L]
+
+# Prevent direct access to sensitive directories
+RedirectMatch 403 ^/app/.*$
+RedirectMatch 403 ^/config/.*$
+RedirectMatch 403 ^/webhooks/.*$
+RedirectMatch 403 ^/scripts/.*$
+RedirectMatch 403 ^/tests/.*$
+RedirectMatch 403 ^/docs/.*$
+RedirectMatch 403 ^/.git/.*$
+RedirectMatch 403 ^/.env$
+RedirectMatch 403 ^/sample-env$

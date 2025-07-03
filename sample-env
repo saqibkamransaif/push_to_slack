@@ -1,0 +1,48 @@
+# Application Environment Configuration
+# Copy this file to .env and update with your actual values
+
+# Environment (development/production)
+ENVIRONMENT=development
+
+# Timezone
+TIMEZONE=UTC
+
+# Slack Configuration
+# Option 1: Event-Specific Webhook URLs (one webhook per channel)
+# Get from: https://api.slack.com/apps/YOUR_APP_ID/incoming-webhooks
+# Create a separate webhook for each channel you want to post to
+
+# Webhook for New Leads (lead-flow channel - same as recruiting secrets)
+SLACK_WEBHOOK_NEWLEAD=https://hooks.slack.com/services/YOUR/WEBHOOK/URL5
+
+# Webhook for New Appointments (appointments channel)
+SLACK_WEBHOOK_NEWAPPOINTMENT=https://hooks.slack.com/services/YOUR/WEBHOOK/URL2
+
+# Webhook for Ebook Downloads (marketing-leads channel)
+SLACK_WEBHOOK_EBOOKLEAD=https://hooks.slack.com/services/YOUR/WEBHOOK/URL3
+
+# Webhook for Contract Status Updates (contract_status_updates channel)
+SLACK_WEBHOOK_CONTRACT_STATUS_UPDATES=https://hooks.slack.com/services/YOUR/WEBHOOK/URL4
+
+# Webhook for Recruiting Secrets Download (lead-flow channel)
+SLACK_WEBHOOK_RECRUITINGSECRETSDOWNLOAD=https://hooks.slack.com/services/YOUR/WEBHOOK/URL5
+
+# Option 2: Bot User OAuth Token (can post to any channel)
+# Get from: https://api.slack.com/apps/YOUR_APP_ID/oauth
+# Required scopes: chat:write, chat:write.public
+SLACK_BOT_TOKEN=xoxb-your-bot-token-here
+
+# Application Settings
+APP_NAME=Webhook to Slack
+APP_URL=https://your-domain.com
+
+# Security
+WEBHOOK_SECRET=your_webhook_secret_here
+
+# Logging Configuration
+ENABLE_LOGGING=true
+ENABLE_ERROR_LOGGING=true
+ENABLE_DEBUG_LOGGING=false
+
+# Webhook Storage
+DELETE_WEBHOOK_ON_SUCCESS=true
