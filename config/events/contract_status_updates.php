@@ -50,7 +50,7 @@ return [
         'documentTitle' => 'Document/contract title',
         'clientName' => 'Client name',
         'clientEmail' => 'Client email address', 
-        'status' => 'Contract status (Sent, Viewed, Signed, Completed)',
+        'status' => 'Contract status (sent, viewed, signed, completed)',
         'time' => 'Time of the update'
     ],
     
