@@ -25,8 +25,14 @@ class SlackModel {
         $this->webhookUrls = [];
         if (is_array($this->eventTypes)) {
             foreach ($this->eventTypes as $eventType => $config) {
-                $envVar = $config['webhook_env_var'] ?? 'SLACK_WEBHOOK_' . strtoupper($eventType);
-                $this->webhookUrls[$eventType] = $_ENV[$envVar] ?? null;
+                // Check if webhook URL is directly configured
+                if (isset($config['webhook_url'])) {
+                    $this->webhookUrls[$eventType] = $config['webhook_url'];
+                } else {
+                    // Fallback to environment variable
+                    $envVar = $config['webhook_env_var'] ?? 'SLACK_WEBHOOK_' . strtoupper($eventType);
+                    $this->webhookUrls[$eventType] = $_ENV[$envVar] ?? null;
+                }
             }
         }
         
