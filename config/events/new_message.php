@@ -5,14 +5,14 @@
  * 
  * Event Type: new_message
  * Channel: sales-coordinator
- * Webhook URL: https://hooks.slack.com/services/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
+ * Webhook URL: Loaded from SLACK_WEBHOOK_NEWMESSAGE environment variable
  */
 
 return [
     'name' => 'New Message',
     'description' => 'Triggered when a new message is received from a contact',
     'slack_channel' => 'sales-coordinator',
-    'webhook_url' => 'https://hooks.slack.com/services/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',
+    'webhook_url' => $_ENV['SLACK_WEBHOOK_NEWMESSAGE'] ?? '',
     'priority' => 'high',
     'notification_type' => 'immediate',
     
