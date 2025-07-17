@@ -30,5 +30,8 @@ return [
      * Message template for new messages
      * Format: {{contact.name}} ({{contact.email}}) sent a new message: {{message.subject}} - {{message.body}}
      */
-    'message_template' => '{name} ({email}) sent a new message: {message_subject} - {message_body}'
+    'message_template' => '{name} ({email})
+    
+    {message_subject} - 
+    {message_body}'
 ];
