@@ -26,34 +26,51 @@ return [
         'appointment_time' => 'Scheduled appointment date and time',
         'assignedTo' => 'Staff member assigned to the appointment',
         'appointmentWith' => 'Staff member the appointment is with',
+        'event_type' => 'Event type identifier',
         'source' => 'Appointment source (e.g., website, phone, referral)',
         'reschedule_link' => 'Link to reschedule the appointment',
         'cancellation_link' => 'Link to cancel the appointment',
-        'calendar_name' => 'Calendar name where appointment is scheduled'
+        'calendar_name' => 'Calendar name where appointment is scheduled',
+        'brokerage_name' => 'Contact brokerage name',
+        'brokerage_website' => 'Contact brokerage website or social media link',
+        'ready_to_invest' => 'Ready to invest response',
+        'we_only_work_with_brokerage_owners_and_team_leads_who_want_to_hire_more_agents_is_that_you' => 'Brokerage owner confirmation',
+        'please_select_your_current_agent_count' => 'Current agent count',
+        'please_select_your_target_agent_count' => 'Target agent count',
+        'commitment_acknowledgment' => 'Commitment acknowledgment response'
     ],
     
     /**
      * Message template for appointments with enhanced styling
      */
-    'message_template' => ':calendar: *New Appointment Scheduled*
+    'message_template' => '📅 *New Appointment Scheduled*
 
-:alarm_clock: *APPOINTMENT TIME*
-`{appointment_time}`
+⏰ **Appointment Time:** `{appointment_time}`
 
-:bust_in_silhouette: *Customer Details*
-• Name: *{name}*
-• Email: {email}
-• Phone: {phone}
-• Source: {source}
+👤 **Contact Information:**
+• *Name:* {name}
+• *Email:* {email}
+• *Phone:* {phone}
+• *Source:* {source}
 
-:office: *Appointment Details*
-• Assigned to: *{assignedTo}*
-• Appointment with: *{appointmentWith}*
-• Calendar: {calendar_name}
+🏢 **Brokerage Details:**
+• *Brokerage:* {brokerage_name}
+• *Website:* {brokerage_website}
 
-:link: *Quick Actions*
-<{reschedule_link}|Reschedule Appointment>
-<{cancellation_link}|Cancel Appointment>
+📊 **Business Information:**
+• *Current Agent Count:* {please_select_your_current_agent_count}
+• *Target Agent Count:* {please_select_your_target_agent_count}
+• *Ready to Invest:* {ready_to_invest}
+• *Brokerage Owner/Team Lead:* {we_only_work_with_brokerage_owners_and_team_leads_who_want_to_hire_more_agents_is_that_you}
 
-_Received: {timestamp}_'
+
+👥 **Assignment:**
+• *Assigned to:* {assignedTo}
+• *Appointment with:* {appointmentWith}
+• *Calendar:* {calendar_name}
+
+🔗 **Actions:**
+<{reschedule_link}|📅 Reschedule> | <{cancellation_link}|❌ Cancel>
+
+_Event Type: {event_type}_'
 ];
