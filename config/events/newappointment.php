@@ -45,31 +45,36 @@ return [
      */
     'message_template' => '📅 *New Appointment Scheduled*
 
-⏰ **Appointment Time:** `{appointment_time}`
+    
+⏰ Appointment Time: `{appointment_time}`
 
-👤 **Contact Information:**
+
+👤 Contact Information:
 • *Name:* {name}
 • *Email:* {email}
 • *Phone:* {phone}
 • *Source:* {source}
 
-🏢 **Brokerage Details:**
+
+🏢 Brokerage Details:
 • *Brokerage:* {brokerage_name}
 • *Website:* {brokerage_website}
 
-📊 **Business Information:**
+
+📊 Business Information:
 • *Current Agent Count:* {please_select_your_current_agent_count}
 • *Target Agent Count:* {please_select_your_target_agent_count}
 • *Ready to Invest:* {ready_to_invest}
 • *Brokerage Owner/Team Lead:* {we_only_work_with_brokerage_owners_and_team_leads_who_want_to_hire_more_agents_is_that_you}
 
 
-👥 **Assignment:**
+👥 Assignment:
 • *Assigned to:* {assignedTo}
 • *Appointment with:* {appointmentWith}
 • *Calendar:* {calendar_name}
 
-🔗 **Actions:**
+
+🔗 Actions:
 <{reschedule_link}|📅 Reschedule> | <{cancellation_link}|❌ Cancel>
 
 _Event Type: {event_type}_'
