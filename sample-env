@@ -1,0 +1,54 @@
+# Application Environment Configuration
+
+# Environment (development/production)
+ENVIRONMENT=development
+
+# Timezone
+TIMEZONE=America/Phoenix
+
+# Slack Configuration
+# Each webhook URL is tied to a specific channel
+# Get these from: https://api.slack.com/apps/YOUR_APP_ID/incoming-webhooks
+
+# Webhook for New Leads (lead-flow channel)
+SLACK_WEBHOOK_NEWLEAD=
+
+# Webhook for New Appointments (appointments channel)
+SLACK_WEBHOOK_NEWAPPOINTMENT=
+
+# Webhook for Ebook Downloads (marketing-leads channel)
+SLACK_WEBHOOK_EBOOKLEAD=
+
+# Webhook for Contract Status Updates (contract_status_updates channel)
+SLACK_WEBHOOK_CONTRACT_STATUS_UPDATES=
+
+# Webhook for Recruiting Secrets Download (lead-flow channel)
+SLACK_WEBHOOK_RECRUITINGSECRETSDOWNLOAD=
+
+# Webhook for New Messages (sales-coordinator channel)
+SLACK_WEBHOOK_NEWMESSAGE=
+
+# Webhook for No Show Rebook (no-shows-rebook channel)
+SLACK_WEBHOOK_NOSHOWREBOOK=
+
+# Webhook for Deals Closed (deals-closed channel)
+SLACK_WEBHOOK_DEALSCLOSED=
+
+# Alternative: Bot Token (can post to any channel)
+# Get from: https://api.slack.com/apps/YOUR_APP_ID/oauth
+SLACK_BOT_TOKEN=
+
+# Application Settings
+APP_NAME=Webhook to Slack
+APP_URL=
+
+# Security
+WEBHOOK_SECRET=
+
+# Logging Configuration
+ENABLE_LOGGING=true
+ENABLE_ERROR_LOGGING=true
+ENABLE_DEBUG_LOGGING=true
+
+# Webhook Storage
+DELETE_WEBHOOK_ON_SUCCESS=true
