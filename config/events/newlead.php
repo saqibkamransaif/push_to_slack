@@ -24,7 +24,12 @@ return [
         'email' => 'Lead email address',
         'phone' => 'Lead phone number',
         'source' => 'Lead source (e.g., website, campaign, contact form)',
-        'assignedTo' => 'Staff member assigned to the lead'
+        'assignedTo' => 'Staff member assigned to the lead',
+        'utm-source' => 'UTM source parameter',
+        'utm-medium' => 'UTM medium parameter',
+        'utm-campaign' => 'UTM campaign parameter',
+        'utm-content' => 'UTM content parameter',
+        'utm-term' => 'UTM term parameter'
     ],
     
     /**
@@ -36,6 +41,14 @@ Email: {email}
 Phone: {phone}
 Source: {source}
 Assigned to: {assignedTo}
+
+*UTM Parameters:*
+Source: {utm-source}
+Medium: {utm-medium}
+Campaign: {utm-campaign}
+Content: {utm-content}
+Term: {utm-term}
+
 Time: {timestamp}',
 
     /**
