@@ -22,7 +22,7 @@ return [
     'expected_fields' => [
         'Client Name' => 'Client/Contact full name',
         'AE' => 'Account Executive name',
-        'Total Amount' => 'Total deal amount',
+        'document.totalAmount' => 'Total Amount',
         'Contract status' => 'Contract status (Signed/Accepted)',
         'Contract Type' => 'Type of contract'
     ],
@@ -34,7 +34,7 @@ return [
 
 *Client:* {Client Name}
 *Account Executive:* {AE}
-*Total Amount:* ${Total Amount}
+*Total Amount:* ${document.totalAmount}
 *Contract Status:* {Contract status}
 *Contract Type:* {Contract Type}'
 ];
