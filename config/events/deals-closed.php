@@ -24,9 +24,7 @@ return [
         'AE' => 'Account Executive name',
         'Total Amount' => 'Total deal amount',
         'Contract status' => 'Contract status (Signed/Accepted)',
-        'Contract Type' => 'Type of contract',
-        'Payment Received' => 'Amount of payment received',
-        'Payment Source' => 'Source of payment'
+        'Contract Type' => 'Type of contract'
     ],
     
     /**
@@ -38,7 +36,5 @@ return [
 *Account Executive:* {AE}
 *Total Amount:* ${Total Amount}
 *Contract Status:* {Contract status}
-*Contract Type:* {Contract Type}
-*Payment Received:* ${Payment Received}
-*Payment Source:* {Payment Source}'
+*Contract Type:* {Contract Type}'
 ];
