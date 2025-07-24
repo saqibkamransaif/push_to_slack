@@ -1,48 +1,70 @@
 <?php
+/**
+ * New Lead Client Success Event Configuration
+ * Handles new lead notifications for client success department with payment information
+ * 
+ * Event Type: newlead-client-success
+ * Channel: client-success-department
+ * Webhook URL: SLACK_WEBHOOK_NEWLEAD_CLIENT_SUCCESS
+ */
 
 return [
-    'event_type' => 'newlead-client-success',
-    'channel_name' => 'client-success-department',
-    'slack_webhook' => $_ENV['SLACK_WEBHOOK_NEWLEAD_CLIENT_SUCCESS'] ?? '',
-    'message_template' => ':sparkles: *New Lead - Client Success* :sparkles:' . PHP_EOL . PHP_EOL .
-        '*Name:* {first_name} {last_name}' . PHP_EOL .
-        '*Email:* {email}' . PHP_EOL .
-        '*Phone:* {phone}' . PHP_EOL .
-        '*Source:* {source}' . PHP_EOL . PHP_EOL .
-        '*UTM Tracking:*' . PHP_EOL .
-        '• Source: {utmsource}' . PHP_EOL .
-        '• Term: {utmterm}' . PHP_EOL .
-        '• Campaign: {utmcampaign}' . PHP_EOL .
-        '• Medium: {utmmedium}' . PHP_EOL .
-        '• Content: {utmcontent}' . PHP_EOL . PHP_EOL .
-        '*Payment Details:*' . PHP_EOL .
-        '• Amount Paid: ${amount_paid}' . PHP_EOL .
-        '• Due Amount: ${amount_due}' . PHP_EOL .
-        '• Total Amount: ${total_amount}' . PHP_EOL .
-        '• Payment Date: {payment_date}' . PHP_EOL .
-        '• Transaction ID: {transaction_id}' . PHP_EOL .
-        '• Invoice Number: {invoice_number}' . PHP_EOL .
-        '• Recorded By: {recorded_by}',
-    'expected_fields' => [
-        'event-type' => 'newlead-client-success',
-        'first_name' => '{{contact.first_name}}',
-        'last_name' => '{{contact.last_name}}',
-        'email' => '{{contact.email}}',
-        'phone' => '{{contact.phone}}',
-        'source' => '{{contact.source}}',
-        'utmsource' => '{{contact.attributionSource.utmSource}}',
-        'utmterm' => '{{contact.attributionSource.utmTerm}}',
-        'utmcampaign' => '{{contact.attributionSource.utmCampaign}}',
-        'utmmedium' => '{{contact.attributionSource.utmMedium}}',
-        'utmcontent' => '{{contact.lastAttributionSource.utmContent}}',
-        'amount_paid' => '{{payment.invoice.amount_paid}}',
-        'amount_due' => '{{payment.invoice.amount_due}}',
-        'total_amount' => '{{payment.total_amount}}',
-        'payment_date' => '{{payment.created_on}}',
-        'transaction_id' => '{{payment.transaction_id}}',
-        'invoice_number' => '{{payment.invoice.number}}',
-        'recorded_by' => '{{payment.invoice.recorded_by}}'
-    ],
+    'name' => 'New Lead - Client Success',
+    'description' => 'Triggered when a new lead with payment is added for client success department',
+    'slack_channel' => 'client-success-department',
+    'webhook_url' => $_ENV['SLACK_WEBHOOK_NEWLEAD_CLIENT_SUCCESS'] ?? '',
     'priority' => 'high',
-    'notification_type' => 'lead_payment'
+    'notification_type' => 'immediate',
+    
+    /**
+     * Expected fields in webhook data
+     */
+    'expected_fields' => [
+        'first_name' => 'Contact first name',
+        'last_name' => 'Contact last name',
+        'email' => 'Contact email address',
+        'phone' => 'Contact phone number',
+        'source' => 'Lead source',
+        'utmsource' => 'UTM source parameter',
+        'utmterm' => 'UTM term parameter',
+        'utmcampaign' => 'UTM campaign parameter',
+        'utmmedium' => 'UTM medium parameter',
+        'utmcontent' => 'UTM content parameter',
+        'amount_paid' => 'Payment amount paid',
+        'amount_due' => 'Payment amount due',
+        'total_amount' => 'Total payment amount',
+        'payment_date' => 'Payment creation date',
+        'transaction_id' => 'Payment transaction ID',
+        'invoice_number' => 'Invoice number',
+        'recorded_by' => 'Payment recorded by'
+    ],
+    
+    /**
+     * Message template for new lead client success alerts
+     */
+    'message_template' => '🎉 *New Lead - Client Success Department* 🎉
+
+📋 **Contact Information:**
+• *Name:* {first_name} {last_name}
+• *Email:* {email}
+• *Phone:* {phone}
+• *Source:* {source}
+
+📊 **UTM Tracking:**
+• *Source:* {utmsource}
+• *Term:* {utmterm}
+• *Campaign:* {utmcampaign}
+• *Medium:* {utmmedium}
+• *Content:* {utmcontent}
+
+💰 **Payment Details:**
+• *Amount Paid:* ${amount_paid}
+• *Due Amount:* ${amount_due}
+• *Total Amount:* ${total_amount}
+• *Payment Date:* {payment_date}
+• *Transaction ID:* {transaction_id}
+• *Invoice Number:* {invoice_number}
+• *Recorded By:* {recorded_by}
+
+⏰ *Timestamp:* {timestamp}'
 ];
