@@ -4,14 +4,14 @@
  * Handles new lead notifications (general leads, not from ebook downloads)
  * 
  * Event Type: newlead
- * Channel: lead-flow (same as recruiting secrets downloads)
+ * Channel: speed-to-lead
  * Webhook URL: SLACK_WEBHOOK_NEWLEAD
  */
 
 return [
     'name' => 'New Lead',
     'description' => 'Triggered when a new lead is added to the system (general leads, not from ebook downloads)',
-    'slack_channel' => 'lead-flow',
+    'slack_channel' => 'speed-to-lead',
     'webhook_env_var' => 'SLACK_WEBHOOK_NEWLEAD',
     'priority' => 'high',
     'notification_type' => 'immediate',
