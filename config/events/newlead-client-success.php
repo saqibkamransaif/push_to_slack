@@ -38,7 +38,7 @@ return [
 • *Email:* {Email}
 • *Phone:* {Phone}
 
-🎯 **Assignment:**
+
 • *Assigned to:* {Assigned User}
 
 ⏰ *Timestamp:* {timestamp}'
