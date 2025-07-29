@@ -12,7 +12,7 @@ return [
     'name' => 'Deals Closed',
     'description' => 'Triggered when a deal is closed successfully',
     'slack_channel' => 'deals-closed',
-    'webhook_url' => $_ENV['SLACK_WEBHOOK_DEALSCLOSED'] ?? '',
+    'webhook_env_var' => 'SLACK_WEBHOOK_DEALSCLOSED',
     'priority' => 'high',
     'notification_type' => 'immediate',
     

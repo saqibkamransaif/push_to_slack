@@ -12,7 +12,7 @@ return [
     'name' => 'No Show Rebook',
     'description' => 'Triggered when a contact has a no-show appointment that needs rebooking',
     'slack_channel' => 'no-shows-rebook',
-    'webhook_url' => $_ENV['SLACK_WEBHOOK_NOSHOWREBOOK'] ?? '',
+    'webhook_env_var' => 'SLACK_WEBHOOK_NOSHOWREBOOK',
     'priority' => 'high',
     'notification_type' => 'immediate',
     

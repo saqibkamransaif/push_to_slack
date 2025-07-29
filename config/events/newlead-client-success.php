@@ -12,7 +12,7 @@ return [
     'name' => 'New Lead - Client Success',
     'description' => 'Triggered when a new lead is assigned for client success department',
     'slack_channel' => 'client-success-department',
-    'webhook_url' => $_ENV['SLACK_WEBHOOK_NEWLEAD_CLIENT_SUCCESS'] ?? '',
+    'webhook_env_var' => 'SLACK_WEBHOOK_NEWLEAD_CLIENT_SUCCESS',
     'priority' => 'high',
     'notification_type' => 'immediate',
     

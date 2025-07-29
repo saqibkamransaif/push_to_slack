@@ -31,6 +31,9 @@ SLACK_WEBHOOK_NEWMESSAGE=
 # Webhook for No Show Rebook (no-shows-rebook channel)
 SLACK_WEBHOOK_NOSHOWREBOOK=
 
+# Webhook for New Message Setter (speed-to-lead channel)
+SLACK_WEBHOOK_NEW_MESSAGE_SETTER=
+
 # Webhook for Deals Closed (deals-closed channel)
 SLACK_WEBHOOK_DEALSCLOSED=
 

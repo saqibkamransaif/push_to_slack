@@ -12,7 +12,7 @@ return [
     'name' => 'New Message',
     'description' => 'Triggered when a new message is received from a contact',
     'slack_channel' => 'sales-coordinator',
-    'webhook_url' => $_ENV['SLACK_WEBHOOK_NEWMESSAGE'] ?? '',
+    'webhook_env_var' => 'SLACK_WEBHOOK_NEWMESSAGE',
     'priority' => 'high',
     'notification_type' => 'immediate',
     
