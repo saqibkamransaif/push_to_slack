@@ -12,7 +12,7 @@ return [
     'name' => 'New Message Setter',
     'description' => 'Triggered when a contact sends a new message to setter',
     'slack_channel' => 'speed-to-lead',
-    'webhook_env_var' => 'SLACK_WEBHOOK_NEW_MESSAGE_SETTER',
+    'webhook_env_var' => 'SLACK_WEBHOOK_SPEED_TO_LEAD_MESSAGE',
     'priority' => 'high',
     'notification_type' => 'immediate',
     

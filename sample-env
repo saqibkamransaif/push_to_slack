@@ -10,8 +10,12 @@ TIMEZONE=America/Phoenix
 # Each webhook URL is tied to a specific channel
 # Get these from: https://api.slack.com/apps/YOUR_APP_ID/incoming-webhooks
 
-# Webhook for New Leads (lead-flow channel)
-SLACK_WEBHOOK_NEWLEAD=
+# Speed to Lead Channel Webhooks
+# Webhook for Speed to Lead - Messages
+SLACK_WEBHOOK_SPEED_TO_LEAD_MESSAGE=
+
+# Webhook for Speed to Lead - New Leads
+SLACK_WEBHOOK_SPEED_TO_LEAD_NEWLEADS=
 
 # Webhook for New Appointments (appointments channel)
 SLACK_WEBHOOK_NEWAPPOINTMENT=

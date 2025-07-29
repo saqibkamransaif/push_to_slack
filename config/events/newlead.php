@@ -9,10 +9,10 @@
  */
 
 return [
-    'name' => 'New Lead',
-    'description' => 'Triggered when a new lead is added to the system (general leads, not from ebook downloads)',
+    'name' => 'Speed to Lead - New Leads',
+    'description' => 'Speed to Lead notifications for new leads added to the system',
     'slack_channel' => 'speed-to-lead',
-    'webhook_env_var' => 'SLACK_WEBHOOK_NEWLEAD',
+    'webhook_env_var' => 'SLACK_WEBHOOK_SPEED_TO_LEAD_NEWLEADS',
     'priority' => 'high',
     'notification_type' => 'immediate',
     
