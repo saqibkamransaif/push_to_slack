@@ -11,7 +11,7 @@
 return [
     'name' => 'Recruiting Secrets Download',
     'description' => 'Triggered when someone downloads recruiting secrets content',
-    'slack_channel' => 'lead-flow',
+    'slack_channel' => 'speed-to-lead',
     'webhook_env_var' => 'SLACK_WEBHOOK_RECRUITINGSECRETSDOWNLOAD',
     'priority' => 'high',
     'notification_type' => 'immediate',

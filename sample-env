@@ -22,7 +22,7 @@ SLACK_WEBHOOK_EBOOKLEAD=
 # Webhook for Contract Status Updates (contract_status_updates channel)
 SLACK_WEBHOOK_CONTRACT_STATUS_UPDATES=
 
-# Webhook for Recruiting Secrets Download (lead-flow channel)
+# Webhook for Recruiting Secrets Download (speed-to-lead channel)
 SLACK_WEBHOOK_RECRUITINGSECRETSDOWNLOAD=
 
 # Webhook for New Messages (sales-coordinator channel)
