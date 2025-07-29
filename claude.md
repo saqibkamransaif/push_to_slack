@@ -23,9 +23,9 @@ webhook url: https://api.saqibkamran.com/public/webhook.php
 I will tell claude following instructions when I need to send new notification to slack:
 
 Add the following event-type:
-event_type: “new_message”
-channel_name: "sales-coordinator"
-slack_webhook: https://hooks.slack.com/services/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
+event_type: "new_message_setter"
+channel_name: "speed-to-lead"
+slack_webhook: https://hooks.slack.com/services/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
 Example Webhook:
 
 
@@ -33,7 +33,7 @@ Custom Data
 These custom key-value pairs will be included along with the standard data
 
 event_type
-no_show_rebook
+new_message_setter
 
 name
 {{contact.name}}
@@ -41,19 +41,16 @@ name
 email
 {{contact.email}}
 
-phone
-{{contact.phone}}
+message_subject
+{{message.subject}}
 
-appointment_time
-{{appointment.start_time}}
-
-reschedule_link
-{{appointment.reschedule_link}}
+message_body
+{{message.body}}
 
 
-
-
-
-I need the above to be formatted and sent to the specified Slack channel using the provided webhook URL. 
-The message should be like:
-{{contact.name}} ({{contact.email}}) sent a new message: {{message.subject}} - {{message.body}}
+Format to send to slack:
+{
+  "text": "{{contact.name}} ({{contact.email}}): 
+    {{message.subject}}
+    {{message.body}}"
+}
