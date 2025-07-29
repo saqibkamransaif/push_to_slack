@@ -9,7 +9,9 @@ require_once __DIR__ . '/../config/bootstrap.php';
 
 $logsDir = BASE_PATH . '/logs';
 $webhooksDir = BASE_PATH . '/webhooks';
-$maxAge = 24 * 60 * 60; // 24 hours in seconds
+$logMaxAge = 24 * 60 * 60; // 24 hours in seconds for logs
+$webhookMaxAge = ($_ENV['WEBHOOK_CLEANUP_HOURS'] ?? 12) * 60 * 60; // Configurable hours for webhooks
+$webhookCleanupEnabled = filter_var($_ENV['WEBHOOK_CLEANUP_ENABLED'] ?? 'true', FILTER_VALIDATE_BOOLEAN);
 
 echo "Log Cleanup Script - " . date('Y-m-d H:i:s') . "\n";
 echo "======================================\n\n";
@@ -53,25 +55,34 @@ function cleanupOldFiles($directory, $maxAge, $pattern = '*') {
 // Clean up log files
 echo "Cleaning up log files older than 24 hours...\n";
 $logPatterns = ['*.log', '*.log.*'];
-$totalDeleted = 0;
+$totalLogDeleted = 0;
 
 foreach ($logPatterns as $pattern) {
-    $deleted = cleanupOldFiles($logsDir, $maxAge, $pattern);
-    $totalDeleted += $deleted;
+    $deleted = cleanupOldFiles($logsDir, $logMaxAge, $pattern);
+    $totalLogDeleted += $deleted;
 }
 
-echo "Deleted $totalDeleted log files\n\n";
+echo "Deleted $totalLogDeleted log files\n\n";
 
-// Clean up webhook JSON files (optional - uncomment if needed)
-// echo "Cleaning up webhook files older than 24 hours...\n";
-// $webhookDeleted = cleanupOldFiles($webhooksDir, $maxAge, '*.json');
-// echo "Deleted $webhookDeleted webhook files\n\n";
+// Clean up webhook JSON files
+$totalWebhookDeleted = 0;
+if ($webhookCleanupEnabled) {
+    $cleanupHours = $_ENV['WEBHOOK_CLEANUP_HOURS'] ?? 12;
+    echo "Cleaning up webhook files older than {$cleanupHours} hours...\n";
+    $totalWebhookDeleted = cleanupOldFiles($webhooksDir, $webhookMaxAge, '*.json');
+    echo "Deleted $totalWebhookDeleted webhook files\n\n";
+} else {
+    echo "Webhook cleanup is disabled\n\n";
+}
 
 // Log the cleanup activity
 require_once BASE_PATH . '/app/models/Logger.php';
 $logger = Logger::getInstance();
-$logger->info('Log cleanup completed', [
-    'logs_deleted' => $totalDeleted,
+$logger->info('Cleanup completed', [
+    'logs_deleted' => $totalLogDeleted,
+    'webhooks_deleted' => $totalWebhookDeleted,
+    'webhook_cleanup_enabled' => $webhookCleanupEnabled,
+    'webhook_cleanup_hours' => $_ENV['WEBHOOK_CLEANUP_HOURS'] ?? 12,
     'execution_time' => time() - $_SERVER['REQUEST_TIME_FLOAT']
 ]);
 

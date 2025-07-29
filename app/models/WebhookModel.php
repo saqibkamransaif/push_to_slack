@@ -64,6 +64,11 @@ class WebhookModel {
             );
             
             if ($result !== false) {
+                // Trigger automatic cleanup (runs approximately every 10th webhook)
+                if (rand(1, 10) === 1) {
+                    $this->cleanupOldWebhooks();
+                }
+                
                 return [
                     'success' => true,
                     'webhook_id' => $webhookId,
@@ -112,6 +117,54 @@ class WebhookModel {
         }
     }
     
+    /**
+     * Automatically cleans up old webhook files
+     * Called during webhook storage to maintain storage efficiency
+     * @return int Number of files deleted
+     */
+    public function cleanupOldWebhooks() {
+        $cleanupEnabled = filter_var($_ENV['WEBHOOK_CLEANUP_ENABLED'] ?? 'true', FILTER_VALIDATE_BOOLEAN);
+        
+        if (!$cleanupEnabled) {
+            return 0;
+        }
+        
+        $maxAge = ($_ENV['WEBHOOK_CLEANUP_HOURS'] ?? 12) * 60 * 60; // Convert hours to seconds
+        $currentTime = time();
+        $deleted = 0;
+        
+        try {
+            $files = glob($this->webhooksDir . '/*.json');
+            
+            foreach ($files as $file) {
+                if (is_file($file)) {
+                    $fileAge = $currentTime - filemtime($file);
+                    
+                    if ($fileAge > $maxAge) {
+                        if (unlink($file)) {
+                            $deleted++;
+                        }
+                    }
+                }
+            }
+            
+            // Log cleanup activity if files were deleted
+            if ($deleted > 0) {
+                require_once BASE_PATH . '/app/models/Logger.php';
+                $logger = Logger::getInstance();
+                $logger->debug('Automatic webhook cleanup completed', [
+                    'files_deleted' => $deleted,
+                    'max_age_hours' => $_ENV['WEBHOOK_CLEANUP_HOURS'] ?? 12
+                ]);
+            }
+            
+        } catch (Exception $e) {
+            error_log('Failed to cleanup old webhooks: ' . $e->getMessage());
+        }
+        
+        return $deleted;
+    }
+
     /**
      * Generates a unique webhook ID
      * @return string Unique webhook identifier
