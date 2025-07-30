@@ -32,14 +32,15 @@ return [
         'cancellation_link' => 'Link to cancel the appointment',
         'calendar_name' => 'Calendar name where appointment is scheduled',
         'brokerage_name' => 'Contact brokerage name',
-        'brokerage_website' => 'Contact brokerage website or social media link',
-        'ready_to_invest' => 'Ready to invest response',
+        'what_is_your_brokerages_website_or_social_media_provide_link' => 'Contact brokerage website or social media link',
+        'if_you_were_able_to_find_a_way_to_grow_scale_your_business_would_you_be_ready_to_invest' => 'Ready to invest response',
         'we_only_work_with_brokerage_owners_and_team_leads_who_want_to_hire_more_agents_is_that_you' => 'Brokerage owner confirmation',
         'please_select_your_current_agent_count' => 'Current agent count',
         'please_select_your_target_agent_count' => 'Target agent count',
-        'commitment_acknowledgment' => 'Commitment acknowledgment response',
-        'are_you_the_decision_maker' => 'Decision maker status',
-        'goal_commitment_2025_scale_1_10' => 'Goal commitment 2025 (scale 1-10)'
+        'i_recognize_that_modern_day_brokerage_dedicates_significant_time_and_resources_to_developing_a_custom_roadmap_for_each_business_because_of_this_i_will_show_up_on_time_if_i_need_to_reschedule_the_meeting_i_will_provide_advance_notice' => 'Commitment acknowledgment response',
+        'we_only_work_with_broker_owners_and_team_leaders_who_want_that_way_to_hire_more_agents_are_you_the_decision_maker' => 'Decision maker status',
+        'biggest_challenge_for_scaling' => 'Biggest challenge for scaling',
+        'currently_monthly_revenue' => 'Currently monthly revenue'
     ],
     
     /**
@@ -60,16 +61,17 @@ return [
 
 🏢 Brokerage Details:
 • *Brokerage:* {brokerage_name}
-• *Website:* {brokerage_website}
+• *Website:* {what_is_your_brokerages_website_or_social_media_provide_link}
 
 
 📊 Business Information:
 • *Current Agent Count:* {please_select_your_current_agent_count}
 • *Target Agent Count:* {please_select_your_target_agent_count}
-• *Ready to Invest:* {ready_to_invest}
+• *Ready to Invest:* {if_you_were_able_to_find_a_way_to_grow_scale_your_business_would_you_be_ready_to_invest}
 • *Brokerage Owner/Team Lead:* {we_only_work_with_brokerage_owners_and_team_leads_who_want_to_hire_more_agents_is_that_you}
-• *Are You the Decision Maker:* {are_you_the_decision_maker}
-• *Goal Commitment 2025 (1-10):* {goal_commitment_2025_scale_1_10}
+• *Are You the Decision Maker:* {we_only_work_with_broker_owners_and_team_leaders_who_want_that_way_to_hire_more_agents_are_you_the_decision_maker}
+• *Biggest challenge for scaling:* {biggest_challenge_for_scaling}
+• *Currently Monthly Revenue:* {currently_monthly_revenue}
 
 
 👥 Assignment:
