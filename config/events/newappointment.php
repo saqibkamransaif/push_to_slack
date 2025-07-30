@@ -37,7 +37,9 @@ return [
         'we_only_work_with_brokerage_owners_and_team_leads_who_want_to_hire_more_agents_is_that_you' => 'Brokerage owner confirmation',
         'please_select_your_current_agent_count' => 'Current agent count',
         'please_select_your_target_agent_count' => 'Target agent count',
-        'commitment_acknowledgment' => 'Commitment acknowledgment response'
+        'commitment_acknowledgment' => 'Commitment acknowledgment response',
+        'are_you_the_decision_maker' => 'Decision maker status',
+        'goal_commitment_2025_scale_1_10' => 'Goal commitment 2025 (scale 1-10)'
     ],
     
     /**
@@ -66,6 +68,8 @@ return [
 • *Target Agent Count:* {please_select_your_target_agent_count}
 • *Ready to Invest:* {ready_to_invest}
 • *Brokerage Owner/Team Lead:* {we_only_work_with_brokerage_owners_and_team_leads_who_want_to_hire_more_agents_is_that_you}
+• *Are You the Decision Maker:* {are_you_the_decision_maker}
+• *Goal Commitment 2025 (1-10):* {goal_commitment_2025_scale_1_10}
 
 
 👥 Assignment:
