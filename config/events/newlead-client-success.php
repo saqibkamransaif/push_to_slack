@@ -21,11 +21,11 @@ return [
      */
     'expected_fields' => [
         'event-type' => 'newlead-client-success',
-        'First Name' => '{{contact.first_name}}',
-        'Last Name' => '{{contact.last_name}}',
-        'Email' => '{{contact.email}}',
-        'Phone' => '{{contact.phone}}',
-        'Assigned User' => '{{user.name}}'
+        'first_name' => '{{contact.first_name}}',
+        'last_name' => '{{contact.last_name}}',
+        'email' => '{{contact.email}}',
+        'phone' => '{{contact.phone}}',
+        'assigned_user' => '{{user.name}}'
     ],
     
     /**
@@ -34,12 +34,12 @@ return [
     'message_template' => '🎉 *New Lead - Client Success Department* 🎉
 
 👤 **Lead Information:**
-• *Name:* {First Name} {Last Name}
-• *Email:* {Email}
-• *Phone:* {Phone}
+• *Name:* {first_name} {last_name}
+• *Email:* {email}
+• *Phone:* {phone}
 
 
-• *Assigned to:* {Assigned User}
+• *Assigned to:* {assigned_user}
 
 ⏰ *Timestamp:* {timestamp}'
 ];
