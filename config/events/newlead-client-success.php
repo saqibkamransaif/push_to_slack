@@ -24,7 +24,7 @@ return [
         'First Name' => '{{contact.first_name}}',
         'Last Name' => '{{contact.last_name}}',
         'Email' => '{{contact.email}}',
-        'Phone' => '{{contact.phone}}',
+        'Phone ' => '{{contact.phone}}',
         'Assigned User' => '{{user.name}}'
     ],
     
@@ -36,7 +36,7 @@ return [
 👤 **Lead Information:**
 • *Name:* {First Name} {Last Name}
 • *Email:* {Email}
-• *Phone:* {Phone}
+• *Phone:* {Phone }
 
 
 • *Assigned to:* {Assigned User}
